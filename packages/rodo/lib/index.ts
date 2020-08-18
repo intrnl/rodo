@@ -121,7 +121,7 @@ async function build_routes (cwd: string, exts: string[]) {
 					throw new Error(`Duplicate entry: ${fullpath}`);
 
 				route.path = name;
-				await walk(fullpath, route, `${current.path}/${name}`, current);
+				await walk(fullpath, route, `${current.path}${current.path ? '/' : ''}${name}`, current);
 			}
 		}
 	}
