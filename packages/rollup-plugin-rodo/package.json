@@ -27,7 +27,7 @@
     "rollup": "^2.26.3"
   },
   "dependencies": {
-    "@intrnl/rodo": "^0.2.1",
+    "@intrnl/rodo": "workspace:^0.2.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
