@@ -1,7 +1,7 @@
 {
   "name": "@intrnl/vite-plugin-rodo",
   "description": "Vite plugin for simple filesystem router",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "author": "intrnl",
   "repository": {
