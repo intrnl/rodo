@@ -1,38 +1,38 @@
 {
-	"name": "@intrnl/vite-plugin-rodo",
-	"description": "Vite plugin for simple filesystem router",
-	"version": "0.2.2",
-	"license": "MIT",
-	"author": "intrnl",
-	"repository": {
-		"url": "https://github.com/intrnl/rodo",
-		"directory": "packages/vite-plugin-rodo"
-	},
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"exports": {
-		".": {
-			"require": "./dist/cjs/index.js",
-			"import": "./dist/esm/index.js"
-		}
-	},
-	"files": [
-		"dist/"
-	],
-	"scripts": {
-		"prepublishOnly": "pnpm run build",
-		"build": "tsc -m commonjs --outDir dist/cjs/ & tsc -m esnext --outDir dist/esm/"
-	},
-	"peerDependencies": {
-		"vite": "^1.0.0-rc.4"
-	},
-	"dependencies": {
-		"@intrnl/rodo": "^0.2.0",
-		"tslib": "^2.0.1",
-		"upath": "^1.2.0"
-	},
-	"devDependencies": {
-		"rollup": "^2.26.3",
-		"vite": "^1.0.0-rc.4"
-	}
+  "name": "@intrnl/vite-plugin-rodo",
+  "description": "Vite plugin for simple filesystem router",
+  "version": "0.2.3",
+  "license": "MIT",
+  "author": "intrnl",
+  "repository": {
+    "url": "https://github.com/intrnl/rodo",
+    "directory": "packages/vite-plugin-rodo"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prepublishOnly": "pnpm run build",
+    "build": "tsc -m commonjs --outDir dist/cjs/ & tsc -m esnext --outDir dist/esm/"
+  },
+  "peerDependencies": {
+    "vite": "^1.0.0-rc.4"
+  },
+  "dependencies": {
+    "@intrnl/rodo": "^0.2.1",
+    "tslib": "^2.0.1",
+    "upath": "^1.2.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.26.3",
+    "vite": "^1.0.0-rc.4"
+  }
 }
