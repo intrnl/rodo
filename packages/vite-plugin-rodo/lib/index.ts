@@ -64,12 +64,16 @@ function server (opts: PassableOptions): ServerPlugin {
 	let absolute_re = new RegExp(escape_re(absolute_dir), 'g');
 
 	return function handler ({ app, root }) {
-		let relative_dir = '/' + path.relative(root, absolute_dir);
+		let relative_dir = path.relative(root, absolute_dir);
+		let rewrite = `/${relative_dir}`;
+
+		if (relative_dir.startsWith('..'))
+			throw new Error(`Pages directory needs to be placed within the "root" directory: ${root}`);
 
 		app.use(async (ctx, next) => {
 			if (ctx.path === `${namespace}/pages`) {
 				let metadata = await generate({ dir, extensions });
-				let serialized = serialize(metadata).replace(absolute_re, relative_dir);
+				let serialized = serialize(metadata).replace(absolute_re, rewrite);
 
 				ctx.type = 'js';
 				ctx.body = `export let routes = ${serialized};`;
