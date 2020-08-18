@@ -4,6 +4,10 @@
 	"version": "0.2.0",
 	"license": "MIT",
 	"author": "intrnl",
+	"repository": {
+		"url": "https://github.com/intrnl/rodo",
+		"directory": "packages/rollup-plugin-rodo"
+	},
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"exports": {
