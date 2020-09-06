@@ -2,10 +2,10 @@ importers:
   .:
     devDependencies:
       '@changesets/cli': 2.10.1
-      typescript: 3.9.7
+      typescript: 4.0.2
     specifiers:
       '@changesets/cli': ^2.10.1
-      typescript: ^3.9.7
+      typescript: ^4.0.2
   packages/rodo:
     dependencies:
       tslib: 2.0.1
@@ -3074,13 +3074,13 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
-  /typescript/3.9.7:
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
   /uniq/1.0.1:
     dev: true
     resolution:
