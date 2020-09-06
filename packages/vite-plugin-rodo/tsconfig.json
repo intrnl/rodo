@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"outDir": "dist/",
 		"declaration": true,
-		"target": "esnext",
+		"target": "es2018",
 		"module": "commonjs",
 		"importHelpers": true,
 		"moduleResolution": "node",
