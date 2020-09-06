@@ -1,7 +1,7 @@
 {
   "name": "@intrnl/rodo",
   "description": "Simple filesystem router",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "MIT",
   "author": "intrnl",
   "repository": {
