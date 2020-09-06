@@ -133,13 +133,13 @@ async function build_routes (cwd: string, exts: string[]) {
 }
 
 function get_path (name: string) {
-	let dynamic = DYNAMIC_RE.exec(name);
 	let catch_all = CATCH_ALL_RE.exec(name);
+	let dynamic = DYNAMIC_RE.exec(name);
 
-	if (dynamic) {
-		return `:${dynamic[1]}`;
-	} else if (catch_all) {
+	if (catch_all) {
 		return `:${catch_all[1]}(.*)`;
+	} else if (dynamic) {
+		return `:${dynamic[1]}`;
 	}
 
 	return name;
