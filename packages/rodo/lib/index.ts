@@ -146,9 +146,12 @@ function get_path (name: string) {
 }
 
 function sort_routes (routes: RouteProp[]) {
-	// @todo: do sorting, is it necessary?
-	function sort (a: RouteProp, b: RouteProp) {
-		return 0;
+	let cache: Record<string, number> = {};
+
+	routes.sort(sort);
+
+	for (let child of routes) {
+		walk(child);
 	}
 
 	function walk (route: RouteProp) {
@@ -159,7 +162,30 @@ function sort_routes (routes: RouteProp[]) {
 		}
 	}
 
-	for (let child of routes) {
-		walk(child);
+	// Crude ranking and sorting method
+
+	function sort (a: RouteProp, b: RouteProp) {
+		let a_score = cache[a.path] ??= rank(a.path);
+		let b_score = cache[b.path] ??= rank(b.path);
+
+		return a_score - b_score;
+	}
+
+	function rank (path: string) {
+		let i = 0;
+		let final_score = 0;
+		let arr = path.split('/');
+
+		for (; i < arr.length; i++) final_score += score(arr[i]);
+
+		return final_score;
+	}
+
+	function score (path: string) {
+		if (path == '@') return 5; // wild
+		if (/^\:(.*)\(/.test(path)) return 4; // param w/ suffix
+		if (/^\:(.*)\?/.test(path)) return 3; // param optional
+		if (/^\:/.test(path)) return 2; // param
+		return 1; // static
 	}
 }
