@@ -10,7 +10,8 @@
 	},
 	"source": "lib/index.ts",
   "main": "dist/rodo.js",
-  "module": "dist/rodo.mjs",
+	"module": "dist/rodo.mjs",
+	"types": "types/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/rodo.js",
@@ -22,8 +23,10 @@
     "README.md"
   ],
   "scripts": {
-    "prepublishOnly": "pnpm run build",
-    "build": "tsc -m commonjs --outDir dist/cjs/ & tsc -m esnext --outDir dist/esm/"
+		"build": "pnpm run build:lib & pnpm run build:types",
+		"build:lib": "bundl",
+		"build:types": "tsc",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "upath": "^1.2.0"
