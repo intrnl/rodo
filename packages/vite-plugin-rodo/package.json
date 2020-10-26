@@ -1,43 +1,43 @@
 {
-  "name": "@intrnl/vite-plugin-rodo",
-  "description": "Vite plugin for simple filesystem router",
-  "version": "0.2.5",
-  "license": "MIT",
-  "author": "intrnl",
-  "repository": {
-    "url": "https://github.com/intrnl/rodo",
-    "directory": "packages/vite-plugin-rodo"
+	"name": "@intrnl/vite-plugin-rodo",
+	"description": "Vite plugin for simple filesystem router",
+	"version": "0.2.5",
+	"license": "MIT",
+	"author": "intrnl",
+	"repository": {
+		"url": "https://github.com/intrnl/rodo",
+		"directory": "packages/vite-plugin-rodo"
 	},
 	"source": "lib/index.ts",
-  "main": "dist/vite-plugin-rodo.js",
+	"main": "dist/vite-plugin-rodo.js",
 	"module": "dist/vite-plugin-rodo.mjs",
 	"types": "types/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/vite-plugin-rodo.js",
-      "import": "./dist/vite-plugin-rodo.mjs"
-    }
-  },
-  "files": [
+	"exports": {
+		".": {
+			"require": "./dist/vite-plugin-rodo.js",
+			"import": "./dist/vite-plugin-rodo.mjs"
+		}
+	},
+	"files": [
 		"dist/",
 		"types/"
-  ],
-  "scripts": {
+	],
+	"scripts": {
 		"build": "pnpm run build:lib & pnpm run build:types",
 		"build:lib": "bundl",
 		"build:types": "tsc",
-    "prepublishOnly": "pnpm run build"
-  },
-  "peerDependencies": {
-    "vite": "^1.0.0-rc.4"
-  },
-  "dependencies": {
-    "@intrnl/rodo": "workspace:^0.3.0",
-    "upath": "^1.2.0"
-  },
-  "devDependencies": {
+		"prepublishOnly": "pnpm run build"
+	},
+	"peerDependencies": {
+		"vite": "^1.0.0-rc.4"
+	},
+	"dependencies": {
+		"@intrnl/rodo": "workspace:^0.3.0",
+		"upath": "^1.2.0"
+	},
+	"devDependencies": {
 		"@intrnl/bundl": "^0.1.8",
-    "rollup": "^2.26.10",
-    "vite": "^1.0.0-rc.4"
-  }
+		"rollup": "^2.32.1",
+		"vite": "^1.0.0-rc.6"
+	}
 }
