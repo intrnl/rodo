@@ -7,13 +7,14 @@
   "repository": {
     "url": "https://github.com/intrnl/rodo",
     "directory": "packages/rodo"
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+	},
+	"source": "lib/index.ts",
+  "main": "dist/rodo.js",
+  "module": "dist/rodo.mjs",
   "exports": {
     ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
+      "require": "./dist/rodo.js",
+      "import": "./dist/rodo.mjs"
     }
   },
   "files": [
@@ -25,10 +26,10 @@
     "build": "tsc -m commonjs --outDir dist/cjs/ & tsc -m esnext --outDir dist/esm/"
   },
   "dependencies": {
-    "tslib": "^2.0.1",
     "upath": "^1.2.0"
   },
   "devDependencies": {
+    "@intrnl/bundl": "^0.1.8",
     "@types/node": "^14.6.4"
   }
 }
