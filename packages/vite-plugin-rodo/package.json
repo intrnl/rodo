@@ -7,31 +7,36 @@
   "repository": {
     "url": "https://github.com/intrnl/rodo",
     "directory": "packages/vite-plugin-rodo"
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+	},
+	"source": "lib/index.ts",
+  "main": "dist/vite-plugin-rodo.js",
+	"module": "dist/vite-plugin-rodo.mjs",
+	"types": "types/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
+      "require": "./dist/vite-plugin-rodo.js",
+      "import": "./dist/vite-plugin-rodo.mjs"
     }
   },
   "files": [
-    "dist/"
+		"dist/",
+		"types/"
   ],
   "scripts": {
-    "prepublishOnly": "pnpm run build",
-    "build": "tsc -m commonjs --outDir dist/cjs/ & tsc -m esnext --outDir dist/esm/"
+		"build": "pnpm run build:lib & pnpm run build:types",
+		"build:lib": "bundl",
+		"build:types": "tsc",
+    "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
     "vite": "^1.0.0-rc.4"
   },
   "dependencies": {
     "@intrnl/rodo": "workspace:^0.3.0",
-    "tslib": "^2.0.1",
     "upath": "^1.2.0"
   },
   "devDependencies": {
+		"@intrnl/bundl": "^0.1.8",
     "rollup": "^2.26.10",
     "vite": "^1.0.0-rc.4"
   }
